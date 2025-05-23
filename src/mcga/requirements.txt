@@ -1,0 +1,22 @@
+numpy<2
+streamlit
+streamlit-ketcher
+pubchempy
+requests
+google-generativeai
+jupyterlab
+chempy
+py3Dmol
+
+# Optional test dependencies (uncomment if needed for development)
+# hypothesis
+# pytest
+# pytest-cov
+# tox
+# genbadge[coverage]
+
+# Optional documentation dependencies (uncomment if needed)
+# furo
+# myst-parser
+# sphinx>=5
+# sphinx-copybutton
