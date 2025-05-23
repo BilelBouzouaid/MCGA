@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "mcga"
-version = "0.0.1"
+version = "0.1.0"
 description = "Green‐chemistry reaction greenness calculator"
 authors = [
     "Jiho <jiho.keum@epfl.ch>",
@@ -14,7 +14,12 @@ authors = [
 ]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "mcga" }]
+homepage = "https://github.com/jihokeum/mcga"
+repository = "https://github.com/jihokeum/mcga"
+documentation = "https://github.com/jihokeum/mcga"
+
+# 👇 Voici la ligne essentielle pour que Poetry trouve ton package
+packages = [{ include = "mcga", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
@@ -32,6 +37,5 @@ py3Dmol = "*"
 test = ["hypothesis", "pytest", "pytest-cov", "tox", "genbadge[coverage]"]
 doc = ["furo", "myst-parser", "sphinx>=5", "sphinx-copybutton"]
 
-[tool.poetry.urls]
-source = "https://github.com/jihokeum/mcga"
-tracker = "https://github.com/jihokeum/mcga/issues"
+[tool.poetry.plugins]
+"console_scripts" = []
