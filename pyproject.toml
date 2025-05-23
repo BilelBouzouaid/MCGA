@@ -5,7 +5,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry]
 name = "mcga"
 version = "0.1.0"
-description = "Green‐chemistry reaction greenness calculator"
+description = "Green-chemistry reaction greenness calculator"
 authors = [
     "Jiho <jiho.keum@epfl.ch>",
     "Bilel Noé Bouzouaid <bilel-noe.bouzouaid@epfl.ch>",
@@ -17,25 +17,54 @@ readme = "README.md"
 homepage = "https://github.com/jihokeum/mcga"
 repository = "https://github.com/jihokeum/mcga"
 documentation = "https://github.com/jihokeum/mcga"
-
-# 👇 Voici la ligne essentielle pour que Poetry trouve ton package
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+# Essential for Poetry to find your package
 packages = [{ include = "mcga", from = "src" }]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.12"
+python = "^3.10"
 numpy = "<2"
-streamlit = "*"
+streamlit = "^1.28.0"
 streamlit-ketcher = "*"
-pubchempy = "*"
-requests = "*"
-google-generativeai = "*"
-jupyterlab = "*"
-chempy = "*"
-py3Dmol = "*"
+pubchempy = "^1.0.4"
+requests = "^2.31.0"
+google-generativeai = "^0.3.0"
+jupyterlab = { version = "^4.0.0", optional = true }
+chempy = "^0.8.0"
+py3Dmol = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+hypothesis = { version = "^6.88.0", optional = true }
+pytest = { version = "^7.4.0", optional = true }
+pytest-cov = { version = "^4.1.0", optional = true }
+tox = { version = "^4.11.0", optional = true }
+
+[tool.poetry.group.docs.dependencies]
+furo = { version = "^2023.9.10", optional = true }
+myst-parser = { version = "^2.0.0", optional = true }
+sphinx = { version = "^7.1.0", optional = true }
+sphinx-copybutton = { version = "^0.5.2", optional = true }
 
 [tool.poetry.extras]
-test = ["hypothesis", "pytest", "pytest-cov", "tox", "genbadge[coverage]"]
-doc = ["furo", "myst-parser", "sphinx>=5", "sphinx-copybutton"]
+test = ["hypothesis", "pytest", "pytest-cov", "tox"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-copybutton"]
+jupyter = ["jupyterlab"]
+all = ["hypothesis", "pytest", "pytest-cov", "tox", "furo", "myst-parser", "sphinx", "sphinx-copybutton", "jupyterlab"]
 
-[tool.poetry.plugins]
-"console_scripts" = []
+# Console scripts (if you want CLI commands)
+[tool.poetry.scripts]
+# mcga-cli = "mcga.cli:main"  # Uncomment if you have a CLI module
+
+# URLs for your project
+[tool.poetry.urls]
+"Homepage" = "https://github.com/jihokeum/mcga"
+"Repository" = "https://github.com/jihokeum/mcga"
+"Documentation" = "https://github.com/jihokeum/mcga"
+"Bug Tracker" = "https://github.com/jihokeum/mcga/issues"
