@@ -10,7 +10,6 @@ requires-python = ">=3.10,<3.12"
 license = { file = "LICENSE" }
 description = "Green‐chemistry reaction greenness calculator"
 
-
 dependencies = [
     "numpy<2",
     "streamlit",
@@ -22,19 +21,20 @@ dependencies = [
     "chempy",
     "py3Dmol"
 ]
+
 authors = [
-     {name = "Jiho", email = "jiho.keum@epfl.ch"},
+    {name = "Jiho", email = "jiho.keum@epfl.ch"},
     {name = "Bilel Noé Bouzouaid", email = "bilel-noe.bouzouaid@epfl.ch"},
     {name = "Alexia Dade", email = "alexia.dade@epfl.ch"},
     {name = "Ylann Willemin", email = "ylann.willemin@epfl.ch"}
 ]
+
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -60,9 +60,6 @@ doc = [
     "sphinx-copybutton",
 ]
 
-[tool.hatch.version]
-path = "src/mcga/__init__.py"
-
 [tool.pytest.ini_options]
 testpaths = [
     "tests",
@@ -77,4 +74,3 @@ omit = [
 exclude_also = [
     "if __name__ == .__main__.:",
 ]
-
